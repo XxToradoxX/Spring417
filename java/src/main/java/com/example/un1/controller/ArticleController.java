@@ -17,7 +17,7 @@ public class ArticleController {
     @GetMapping("/ttst")
     public String SelectAll(){
         List<Ariticle> aritileList = artileMapper.selectAll();
-        System.out.println(aritileList);
+        log.info("{}",aritileList);
         return "yes";
     }
 }
