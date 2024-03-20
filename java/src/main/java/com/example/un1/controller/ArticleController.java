@@ -21,6 +21,6 @@ public class ArticleController {
 //        ArticleMapper artileMapper = sqlSession.getMapper(ArticleMapper.class);
         List<Ariticle> aritileList = artileMapper.selectAll();
         log.info("{}",aritileList);
-        return "yes";
+        return "yees";
     }
 }
