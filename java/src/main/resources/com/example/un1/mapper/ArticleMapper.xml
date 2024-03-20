@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.un1.mapper.ArticleMapper">
+    <select id="selectAll" resultType="com.example.un1.pojo.Ariticle">
+        select *
+        from t_article
+    </select>
+</mapper>
