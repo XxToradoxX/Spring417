@@ -5,6 +5,7 @@
 <mapper namespace="com.example.un1.mapper.ArticleMapper">
 <!--    用resultMap给SelectAllAll的值映射关系-->
 <!--    切记切记column的名字不能重复,也就是sql查询表的col名不能重复,如果重复要取别名-->
+<!--    即使map映射中的property名字与实体类名称一致也不能省略-->
     <resultMap id="ac" type="com.example.un1.pojo.Article" >
         <id property="id" column="id" />
         <result property="title" column="title"/>
