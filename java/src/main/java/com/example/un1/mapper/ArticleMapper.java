@@ -8,4 +8,5 @@ import java.util.List;
 @Mapper
 public interface ArticleMapper {
     public List<Article> selectAll();
+    public List<Article> selectAllAll();
 }

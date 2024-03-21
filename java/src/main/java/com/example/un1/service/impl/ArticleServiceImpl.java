@@ -17,10 +17,10 @@ public class ArticleServiceImpl implements ArticleService {
     CommentMapper commentMapper;
     @Override
     public List<Article> selectAll() {
-        List<Article> ariticleList = articleMapper.selectAll();
-        for(Article it:ariticleList){
-            it.setCommentList(commentMapper.getCommentsByAid(it.getId()));
-        }
+        List<Article> ariticleList = articleMapper.selectAllAll();
+//        for(Article it:ariticleList){
+//            it.setCommentList(commentMapper.getCommentsByAid(it.getId()));
+//        }
         return ariticleList;
     }
 }

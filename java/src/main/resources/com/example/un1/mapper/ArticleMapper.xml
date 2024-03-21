@@ -3,13 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.un1.mapper.ArticleMapper">
-    <select id="selectAllAll" resultType="com.example.un1.pojo.Article">
-        SELECT *
+<!--    用resultMap给SelectAllAll的值映射关系-->
+    <resultMap id="ac" type="com.example.un1.pojo.Article" >
+        <id property="id" column="id" />
+        <result property="title" column="title"/>
+        <result property="content" column="content"/>
+        <collection property="commentList" ofType="com.example.un1.pojo.Comment">
+            <id property="id" column="id" />
+            <result property="content" column="content"/>
+            <result property="author" column="author"/>
+            <result property="aId" column="a_id"/>
+        </collection>
+    </resultMap>
+    <select id="selectAllAll" resultMap="ac">
+        SELECT a.id,a.title,a.content,b.content,b.author
         FROM t_article a,t_comment b
         WHERE a.id=b.a_id
     </select>
-    <select id="selectAll" resultType="com.example.un1.pojo.Article">
-        select *
-        from t_article
-    </select>
+<!--    下面的方法可以被上面selectAllAll代替且selectAllAll可以直接返回到Comments的值-->
+<!--    <select id="selectAll" resultType="com.example.un1.pojo.Article">-->
+<!--        select *-->
+<!--        from t_article-->
+<!--    </select>-->
 </mapper>

@@ -18,7 +18,9 @@ class Un1ApplicationTests {
     void ttst1() {
         List<Article> aritileList = articleService.selectAll();
         log.info("可以得到的结果是:{}",aritileList);
-
+        for(Article it:aritileList){
+            log.info("{}",it);
+        }
     }
 
 }
