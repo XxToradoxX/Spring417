@@ -4,19 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.un1.mapper.ArticleMapper">
 <!--    用resultMap给SelectAllAll的值映射关系-->
+<!--    切记切记column的名字不能重复,也就是sql查询表的col名不能重复,如果重复要取别名-->
     <resultMap id="ac" type="com.example.un1.pojo.Article" >
         <id property="id" column="id" />
         <result property="title" column="title"/>
         <result property="content" column="content"/>
         <collection property="commentList" ofType="com.example.un1.pojo.Comment">
-            <id property="id" column="id" />
-            <result property="content" column="content"/>
-            <result property="author" column="author"/>
-            <result property="aId" column="a_id"/>
+            <id property="id" column="c_id" />
+            <result property="content" column="c_content"/>
+            <result property="author" column="c_author"/>
         </collection>
     </resultMap>
     <select id="selectAllAll" resultMap="ac">
-        SELECT a.id,a.title,a.content,b.content,b.author
+        SELECT a.*,b.id c_id,b.content c_content,b.author c_author
         FROM t_article a,t_comment b
         WHERE a.id=b.a_id
     </select>
