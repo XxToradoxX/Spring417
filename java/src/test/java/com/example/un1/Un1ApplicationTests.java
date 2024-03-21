@@ -1,7 +1,6 @@
 package com.example.un1;
 
-import com.example.un1.mapper.ArticleMapper;
-import com.example.un1.pojo.Ariticle;
+import com.example.un1.pojo.Article;
 import com.example.un1.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -17,8 +16,8 @@ class Un1ApplicationTests {
     ArticleService articleService;
     @Test
     void ttst1() {
-        List<Ariticle> aritileList = articleService.selectAll();
-        log.info("{}",aritileList);
+        List<Article> aritileList = articleService.selectAll();
+        log.info("可以得到的结果是:{}",aritileList);
 
     }
 
