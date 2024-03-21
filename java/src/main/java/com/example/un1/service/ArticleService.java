@@ -8,4 +8,5 @@ import java.util.List;
 public interface ArticleService {
 
     List<Article> selectAll();
+    List<Article> selectAllAll();
 }

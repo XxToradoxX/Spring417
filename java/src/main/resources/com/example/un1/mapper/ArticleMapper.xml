@@ -21,8 +21,8 @@
         WHERE a.id=b.a_id
     </select>
 <!--    下面的方法可以被上面selectAllAll代替且selectAllAll可以直接返回到Comments的值-->
-<!--    <select id="selectAll" resultType="com.example.un1.pojo.Article">-->
-<!--        select *-->
-<!--        from t_article-->
-<!--    </select>-->
+    <select id="selectAll" resultType="com.example.un1.pojo.Article">
+        select *
+        from t_article
+    </select>
 </mapper>

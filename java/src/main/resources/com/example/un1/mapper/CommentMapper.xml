@@ -7,7 +7,7 @@
         select *
         from t_comment
         <where>
-            id = #{id}
+            a_id = #{id}
         </where>
     </select>
 </mapper>

@@ -17,7 +17,7 @@ public class ArticleController {
     @GetMapping("/ttst")
     public String SelectAll(){
 //        ArticleMapper artileMapper = sqlSession.getMapper(ArticleMapper.class);
-        List<Article> aritileList = artileMapper.selectAll();
+        List<Article> aritileList = artileMapper.selectAllAll();
         log.info("{}",aritileList);
         return "yees";
     }
