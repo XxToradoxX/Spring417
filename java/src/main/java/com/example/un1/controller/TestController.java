@@ -19,8 +19,11 @@ public class TestController {
     @GetMapping("/hello")
     public ModelAndView Hello(){
         String zbc = "真不戳啊";
+        Article article = new Article();
+//        article.setTitle();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("zbc",zbc);
+        modelAndView.addObject("abc",article);
         modelAndView.setViewName("hello");
         return modelAndView;
     }
