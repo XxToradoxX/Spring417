@@ -4,8 +4,10 @@ import com.example.un1.pojo.Article;
 import com.example.un1.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -15,11 +17,17 @@ public class TestController {
     @Autowired
     ArticleService articleService;
     @GetMapping("/hello")
-    public String Hello(){
-        return "/hello";
+    public ModelAndView Hello(){
+        String zbc = "真不戳啊";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("zbc",zbc);
+        modelAndView.setViewName("hello");
+        return modelAndView;
     }
     @GetMapping("/ano")
-    public String ano(){
+    public String ano(Model model){
+        String zbc = "真不戳啊";
+        model.addAttribute("zbc",zbc);
         return "/view/ano";
     }
 }
