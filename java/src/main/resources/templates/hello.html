@@ -8,8 +8,16 @@
 <h1>this is for hello</h1>
 <h1 th:text="${zbc}">文本被覆盖</h1>
 <h1>[[${zbc}]]</h1>
-<script>
+<div th:utext="${h1}"/>
+<div th:text="'标题是:'+${article.getTitle()}"></div>
+<div th:text="'内容是:'+${article.getContent()}"></div>
+<div th:if="${article.getCommentList()!=null}">
+    <div th:for="">
 
+    </div>
+</div>
+<script>
+// console.log(${article})
 </script>
 </body>
 </html>

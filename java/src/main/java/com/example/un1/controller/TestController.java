@@ -18,12 +18,13 @@ public class TestController {
     ArticleService articleService;
     @GetMapping("/hello")
     public ModelAndView Hello(){
+        String h1 = "<h1>我的天哪</h1>";
         String zbc = "真不戳啊";
-        Article article = new Article();
-//        article.setTitle();
+        Article article = articleService.selectAllAll().get(0);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("zbc",zbc);
-        modelAndView.addObject("abc",article);
+        modelAndView.addObject("article",article);
+        modelAndView.addObject("h1",h1);
         modelAndView.setViewName("hello");
         return modelAndView;
     }
