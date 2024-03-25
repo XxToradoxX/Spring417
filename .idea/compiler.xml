@@ -10,5 +10,8 @@
         <module name="un1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring417" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
