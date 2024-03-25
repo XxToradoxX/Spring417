@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let data
+    axios.get("http://localhost:7007/article/selectAll").then(resp=>{
+        console.log(resp.data)
+        data=resp.data
+    })
+</script>
+</body>
+</html>
