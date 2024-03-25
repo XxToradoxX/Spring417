@@ -11,19 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @Slf4j
 public class ArticleController {
     @Autowired
     ArticleService articleService;
-    @GetMapping("/hello")
-    public String SelectAll(){
+    @GetMapping("/article/selectAll")
+    public Object SelectAll(){
         List<Article> aritileList = articleService.selectAllAll();
         log.info("{}",aritileList);
-        return "/hello";
-    }
-    @GetMapping("/ano")
-    public String ano(){
-        return "/view/ano";
+        return aritileList;
     }
 }
