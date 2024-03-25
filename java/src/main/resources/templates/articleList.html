@@ -5,6 +5,23 @@
     <title>Title</title>
 </head>
 <body>
-<div th:text="${articleList.size()}"/>
+<div th:text="'有'+${articleList.size()}+'篇文章'"/>
+<table>
+    <tr th:each="article,status:${articleList}">
+        <td>[[${article.id}]]</td>
+        <td>[[${article.title}]]</td>
+        <td>[[${article.content}]]</td>
+        <td th:text="${status.count}"></td>
+        <td th:text="${status.even}"></td>
+        <td th:text="${status.first}"></td>
+        <td th:text="${status.index}"></td>
+        <td th:text="${status.last}"></td>
+        <td th:text="${status.odd}"></td>
+        <td th:text="${status.size}"></td>
+        <td>
+
+        </td>
+    </tr>
+</table>
 </body>
 </html>
