@@ -2,21 +2,32 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Title</title>
     <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{css/signin.css}">
 </head>
 <body class="text-center">
-    <form class="form-signin">
-        <img id="imggg" th:src="@{img/aaaaa.jpg}" class="mb-4" width="300" height="300" >
-        <img id="imgg" th:src="@{img/abc.jpg}" class="mb-4" width="30" height="30" >
-        <h1 class="h3 mb-3 font-weight-normal">登录,请</h1>
-        <input class="form-control" type="text" name="username">
-        <input class="form-control" type="password" name="password">
-        <input class="btn btn-lg btn-primary btn-block" type="submit" value="登录">
-        <footer th:replace="footer.html"></footer>
-    </form>
+    <div>
+<!--        <div th:text="#{article.content}">内容</div>-->
+<!--        <div th:text="#{article.title}">标题</div>-->
+        <form class="form-signin">
+            <img th:src="@{img/114514.jpg}" class="mb-4" width="80" height="80"/>
+            <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tips}"></h1>
+            <input class="form-control" type="text" name="username" th:placeholder="#{login.username}">
+            <input class="form-control" type="password" name="password" th:placeholder="#{login.password}">
+            <input class="btn btn-lg btn-primary btn-block" type="submit" th:value="#{login.button}">
+        </form>
+        <a th:href="@{/login(l='zh_CN')}">Chinese</a>
+        <a th:href="@{/login(l='en_US')}">英文</a>
+        <p class="mt-5 mb-3" th:replace="~{footer::copy}">replace生成</p>
+        <p class="mt-5 mb-3" th:include="~{footer::copy}">include生成</p>
+        <p class="mt-5 mb-3" th:insert="~{footer::copy}">insert生成</p>
+    </div>
+</body>
 <script>
+    // <!--            <img id="imggg" th:src="@{img/aaaaa.jpg}" class="mb-4" width="300" height="300">-->
+    //     <!--            <img id="imgg" th:src="@{img/abc.jpg}" class="mb-4" width="30" height="30" >-->
     var timer = null;//全局命名定时器的名字
     var img1,img2;//全局命名img
     var r = 0;//全局命名角度
@@ -40,5 +51,4 @@
         timer=null
     }
 </script>
-</body>
 </html>
