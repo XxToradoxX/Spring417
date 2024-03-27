@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<div th:text="'有'+${articleList.size()}+'篇文章'"/>
+<div th:text="'有'+${articleList.size()==2?'俩':'不是俩'}+'篇文章'"/>
 <table>
     <tr th:each="article,status:${articleList}">
         <td>[[${article.id}]]</td>
@@ -19,9 +19,16 @@
         <td th:text="${status.odd}"></td>
         <td th:text="${status.size}"></td>
         <td>
-
         </td>
     </tr>
+    <div th:switch="${articleList.size()}">
+        <div th:case="1">
+            一个一个一个一个一个一个一个一个一个
+        </div>
+        <div th:case="2">
+            俩个俩个俩个俩个俩个俩个俩个俩个俩个
+        </div>
+    </div>
 </table>
 </body>
 </html>
