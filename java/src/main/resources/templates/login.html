@@ -14,14 +14,11 @@
         <input class="form-control" type="text" name="username">
         <input class="form-control" type="password" name="password">
         <input class="btn btn-lg btn-primary btn-block" type="submit" value="登录">
+        <footer th:replace="footer.html"></footer>
     </form>
-<!--    <div th:object="${article}">-->
-<!--        <p th:text="*{article.content}"></p>-->
-<!--        <p th:text="*{article.title}"></p>-->
-<!--    </div>-->
 <script>
     var timer = null;//全局命名定时器的名字
-    var img;//全局命名img
+    var img1,img2;//全局命名img
     var r = 0;//全局命名角度
     window.onload = function () {//页面一启动就加载
 
@@ -31,16 +28,17 @@
         img2.style.left="950px"
         img2.style.top="350px"
         timer = setInterval(() => {
-            img2.style.transform = 'rotate(' + (r += 3) + 'deg)';//用css的转换属性
+            img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
             img2.style.transition = 'all 1s linear';
             img1.style.transform = 'rotate(' + (r += 30) + 'deg)';//用css的转换属性
             img1.style.transition = 'all 1s linear';//用css的过度属性，注意 时间需要和定时器启动的时间一致才能不卡帧,不要linear会一顿一顿的
             console.log('定时器启动');
         }, 100);
-
-
-
     };
+    img1.onfocus = ()=>{
+
+        timer=null
+    }
 </script>
 </body>
 </html>
