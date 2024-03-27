@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <link rel="stylesheet" th:href="">-->
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/signin.css}">
 </head>
-<body>
-    <form>
-        <input type="text" name="username">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <input type="submit">
+<body class="text-center">
+    <form class="form-signin">
+        <img th:src="@{img/abc.jpg}" class="mb-4" width="700" height="200">
+        <h1 class="h3 mb-3 font-weight-normal">登录,请</h1>
+        <input class="form-control" type="text" name="username">
+        <input class="form-control" type="password" name="password">
+        <input class="btn btn-lg btn-primary btn-block" type="submit" value="登录">
     </form>
 </div>
 <script>
