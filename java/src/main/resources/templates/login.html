@@ -8,7 +8,7 @@
 </head>
 <body class="text-center">
     <form class="form-signin">
-        <img th:src="@{img/abc.jpg}" class="mb-4" width="300" height="50">
+        <img id="imgg" th:src="@{img/abc.jpg}" class="mb-4" width="300" height="300" >
         <h1 class="h3 mb-3 font-weight-normal">登录,请</h1>
         <input class="form-control" type="text" name="username">
         <input class="form-control" type="password" name="password">
@@ -16,7 +16,22 @@
     </form>
 </div>
 <script>
-// console.log(${article})
+    var timer = null;//全局命名定时器的名字
+    var img;//全局命名img
+    var r = 0;//全局命名角度
+    window.onload = function () {//页面一启动就加载
+
+        img = document.getElementById('imgg');
+
+        timer = setInterval(() => {
+            img.style.transform = 'rotate(' + (r += 10) + 'deg)';//用css的转换属性
+            img.style.transition = 'all 1s linear';//用css的过度属性，注意 时间需要和定时器启动的时间一致才能不卡帧,不要linear会一顿一顿的
+            console.log('定时器启动');
+        }, 50);
+
+
+
+    };
 </script>
 </body>
 </html>
