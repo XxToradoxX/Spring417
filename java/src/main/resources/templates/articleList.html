@@ -8,6 +8,7 @@
 <div th:text="'有'+${articleList.size()==2?'俩':'不是俩'}+'篇文章'"/>
 <table>
     <tr th:each="article,status:${articleList}">
+<!--        <td>[[${article.commentList}]]</td>-->
         <td>[[${article.id}]]</td>
         <td>[[${article.title}]]</td>
         <td>[[${article.content}]]</td>
@@ -18,8 +19,11 @@
         <td th:text="${status.last}"></td>
         <td th:text="${status.odd}"></td>
         <td th:text="${status.size}"></td>
-        <td>
-        </td>
+<!--        <td>-->
+<!--            <tr th:each="comment,s:${article.commentList}">-->
+<!--                <td>[[${comment}]]</td>-->
+<!--            </tr>-->
+<!--        </td>-->
     </tr>
     <div th:switch="${articleList.size()}">
         <div th:case="1">
