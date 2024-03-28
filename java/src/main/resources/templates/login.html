@@ -32,8 +32,6 @@
     var img1,img2;//全局命名img
     var r = 0;//全局命名角度
     window.onload = function () {//页面一启动就加载
-
-        img1 = document.getElementById('imggg');
         img2 = document.getElementById('imgg');
         img2.style.position="relative"
         timer = setInterval(() => {
@@ -41,12 +39,10 @@
             img2.style.top=(-500+Math.random()*1000)+'px'
             img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
             img2.style.transition = 'all 1s linear';
-            img1.style.transform = 'rotate(' + (r += 30) + 'deg)';//用css的转换属性
-            img1.style.transition = 'all 1s linear';//用css的过度属性，注意 时间需要和定时器启动的时间一致才能不卡帧,不要linear会一顿一顿的
             console.log('定时器启动');
-        }, 100);
+        }, 1000);
     };
-    // img1.onfocus = ()=>{
+    // img1.onblur = ()=>{
     //
     //     timer=null
     // }
