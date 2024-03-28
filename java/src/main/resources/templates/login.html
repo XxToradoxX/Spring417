@@ -38,12 +38,14 @@
                 if($("img").size<=100){
                     $("div").append($("#imgg").clone());
                 }
+                img2.style.width=(Math.random()*500)+'px'
+                img2.style.height=(Math.random()*500)+'px'
                 img2.style.left=(-500+Math.random()*1000)+'px'
                 img2.style.top=(-500+Math.random()*1000)+'px'
                 img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
                 img2.style.transition = 'all 1s linear';
                 console.log('定时器启动');
-            }, 100);
+            }, 1000);
         };
     })
 </script>
