@@ -25,26 +25,26 @@
         <p class="mt-5 mb-3" th:insert="~{footer::copy}">insert生成</p>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script>
-    // <!--            <img id="imggg" th:src="@{img/aaaaa.jpg}" class="mb-4" width="300" height="300">-->
-    //     <!--            <img id="imgg" th:src="@{img/abc.jpg}" class="mb-4" width="30" height="30" >-->
-    var timer = null;//全局命名定时器的名字
-    var img1,img2;//全局命名img
-    var r = 0;//全局命名角度
-    window.onload = function () {//页面一启动就加载
-        img2 = document.getElementById('imgg');
-        img2.style.position="relative"
-        timer = setInterval(() => {
-            img2.style.left=(-500+Math.random()*1000)+'px'
-            img2.style.top=(-500+Math.random()*1000)+'px'
-            img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
-            img2.style.transition = 'all 1s linear';
-            console.log('定时器启动');
-        }, 1000);
-    };
-    // img1.onblur = ()=>{
-    //
-    //     timer=null
-    // }
+    $(function (){
+        var timer = null;
+        var img1,img2;
+        var r = 0;
+        window.onload = function () {
+            img2 = document.getElementById('imgg');
+            img2.style.position="relative"
+            timer = setInterval(() => {
+                if($("img").size<=100){
+                    $("div").append($("#imgg").clone());
+                }
+                img2.style.left=(-500+Math.random()*1000)+'px'
+                img2.style.top=(-500+Math.random()*1000)+'px'
+                img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
+                img2.style.transition = 'all 1s linear';
+                console.log('定时器启动');
+            }, 100);
+        };
+    })
 </script>
 </html>
