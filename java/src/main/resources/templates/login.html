@@ -33,17 +33,18 @@
         var r = 0;
         window.onload = function () {
             img2 = document.getElementById('imgg');
+            $("#imgg").css("position","relative")
             img2.style.position="relative"
             timer = setInterval(() => {
-                if($("img").size<=100){
+                if($("img").length<=10){
                     $("div").append($("#imgg").clone());
                 }
-                img2.style.width=(Math.random()*500)+'px'
-                img2.style.height=(Math.random()*500)+'px'
-                img2.style.left=(-500+Math.random()*1000)+'px'
-                img2.style.top=(-500+Math.random()*1000)+'px'
-                img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
-                img2.style.transition = 'all 1s linear';
+                $("#imgg").css("width",(Math.random()*500)+'px')
+                $("#imgg").css("height",(Math.random()*500)+'px')
+                $("#imgg").css("left",(-500+Math.random()*1000)+'px')
+                $("#imgg").css("top",(-500+Math.random()*1000)+'px')
+                $("#imgg").css("transform",'rotate(' + (r += 50) + 'deg)')
+                $("#imgg").css("transition",'all 1s linear')
                 console.log('定时器启动');
             }, 1000);
         };
