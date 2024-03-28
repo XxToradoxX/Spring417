@@ -12,7 +12,7 @@
 <!--        <div th:text="#{article.content}">内容</div>-->
 <!--        <div th:text="#{article.title}">标题</div>-->
         <form class="form-signin">
-            <img th:src="@{img/114514.jpg}" class="mb-4" width="80" height="80"/>
+            <img th:src="#{img}" class="mb-4" width="80" height="80" id="imgg"/>
             <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tips}"></h1>
             <input class="form-control" type="text" name="username" th:placeholder="#{login.username}">
             <input class="form-control" type="password" name="password" th:placeholder="#{login.password}">
@@ -35,10 +35,10 @@
 
         img1 = document.getElementById('imggg');
         img2 = document.getElementById('imgg');
-        img2.style.position="absolute"
-        img2.style.left="950px"
-        img2.style.top="350px"
+        img2.style.position="relative"
         timer = setInterval(() => {
+            img2.style.left=(-500+Math.random()*1000)+'px'
+            img2.style.top=(-500+Math.random()*1000)+'px'
             img2.style.transform = 'rotate(' + (r += 50) + 'deg)';//用css的转换属性
             img2.style.transition = 'all 1s linear';
             img1.style.transform = 'rotate(' + (r += 30) + 'deg)';//用css的转换属性
@@ -46,9 +46,9 @@
             console.log('定时器启动');
         }, 100);
     };
-    img1.onfocus = ()=>{
-
-        timer=null
-    }
+    // img1.onfocus = ()=>{
+    //
+    //     timer=null
+    // }
 </script>
 </html>
