@@ -31,6 +31,6 @@ class Un1ApplicationTests {
     @Test
     void ttst3(){
         List<Comment> commentList = commentService.selectAll();
-        log.info("{}",commentList);
+        log.info("答案是{}",commentList);
     }
 }
